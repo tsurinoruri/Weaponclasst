@@ -10,8 +10,8 @@ github.com/tsurinoruri
 #include <exception> 
 
 #include "WeaponClassTest.h"
-
-// Базовый класс для исключений оружия
+serlocale(KC_ALL,"RUS");
+// ГЃГ Г§Г®ГўГ»Г© ГЄГ«Г Г±Г± Г¤Г«Гї ГЁГ±ГЄГ«ГѕГ·ГҐГ­ГЁГ© Г®Г°ГіГ¦ГЁГї
 class WeaponException : public exception {
 protected:
     string message;
@@ -22,26 +22,26 @@ public:
     }
 };
 
-// Исключение: нет патронов
+// Г€Г±ГЄГ«ГѕГ·ГҐГ­ГЁГҐ: Г­ГҐГІ ГЇГ ГІГ°Г®Г­Г®Гў
 class NoAmmoException : public WeaponException {
 public:
     NoAmmoException(const string& weaponName)
-        : WeaponException("Ошибка: У оружия \"" + weaponName + "\" нет патронов") {
+        : WeaponException("ГЋГёГЁГЎГЄГ : Г“ Г®Г°ГіГ¦ГЁГї \"" + weaponName + "\" Г­ГҐГІ ГЇГ ГІГ°Г®Г­Г®Гў") {
     }
 };
 
-// Исключение: неправильный тип оружия
+// Г€Г±ГЄГ«ГѕГ·ГҐГ­ГЁГҐ: Г­ГҐГЇГ°Г ГўГЁГ«ГјГ­Г»Г© ГІГЁГЇ Г®Г°ГіГ¦ГЁГї
 class WrongWeaponTypeException : public WeaponException {
 public:
     WrongWeaponTypeException(const string& weaponName, const string& expectedType)
-        : WeaponException("Ошибка: Оружие \"" + weaponName + "\" не является оружием " + expectedType + " боя!") {
+        : WeaponException("ГЋГёГЁГЎГЄГ : ГЋГ°ГіГ¦ГЁГҐ \"" + weaponName + "\" Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г®Г°ГіГ¦ГЁГҐГ¬ " + expectedType + " ГЎГ®Гї!") {
     }
 };
 
-// Исключение: неверные параметры
+// Г€Г±ГЄГ«ГѕГ·ГҐГ­ГЁГҐ: Г­ГҐГўГҐГ°Г­Г»ГҐ ГЇГ Г°Г Г¬ГҐГІГ°Г»
 class InvalidParameterException : public WeaponException {
 public:
     InvalidParameterException(const string& paramName, const string& reason)
-        : WeaponException("Ошибка: Неверный параметр " + paramName + " - " + reason) {
+        : WeaponException("ГЋГёГЁГЎГЄГ : ГЌГҐГўГҐГ°Г­Г»Г© ГЇГ Г°Г Г¬ГҐГІГ° " + paramName + " - " + reason) {
     }
 };
