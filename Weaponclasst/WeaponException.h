@@ -10,7 +10,7 @@ github.com/tsurinoruri
 #include <exception> 
 
 #include "WeaponClassTest.h"
-setlocale(KC_ALL,"RUS");
+setlocale(LC_ALL,"RUS");
 // Áàçîâûé êëàññ äëÿ èñêëþ÷åíèé îðóæèÿ
 class WeaponException : public exception {
 protected:
